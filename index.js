@@ -99,28 +99,31 @@ console.log('---09.---');
 "(XXX) XXX-XXXX". (10 taškų) */
 console.log('---10.---');
 function telefonoNumeris(arr) {
-    
+
     const a = arr.toString();
-    if (a.length !== 10) {
+    let b = '';
+    b = a.replace(/,/gi, '');
+     
+    if (b.length !== 10) {
         return 'not 10 numbers !!!'
     }
     let string = '';
     let number = '';
     for (var i = 0; i < 3; i++) {
-        string += a[i];
+        string += b[i];
     }
     number = '(' + string + ') '
     string = '';
     for (var i = 3; i < 6; i++) {
-        string += a[i];
+        string += b[i];
     }
     number += string + '-'
     string = '';
     for (var i = 6; i < 10; i++) {
-        string += a[i];
+        string += b[i];
     }
     number += string;
 
     return number;
 }
-console.log( telefonoNumeris(9587412536));
+console.log( telefonoNumeris([9,5,8,7,4,1,2,5,3,6]));
